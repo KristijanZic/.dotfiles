@@ -1,0 +1,9 @@
+# Alacritty configuration file
+
+[window]
+  opacity = 0.5
+
+# You can also set the background color to a specific color with an alpha channel.
+# For example, to set the background to 50% transparent black, you would use the following:
+#
+# background_color = "rgba(0,0,0,0.5)"
