@@ -9,3 +9,16 @@ capitalize_first_letter() {
 
 show_hero
 setup_shell "fish"
+
+restow() {
+    config="${1}"
+    printf "Stowing $config..."
+    stow --restow -t ~ -d $HOME/.dotfiles $config
+    printf "\r%sStowed $config..."
+    echo ""
+}
+
+restow bin
+restow zsh
+restow alacritty
+echo "DONE"
