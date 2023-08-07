@@ -1,0 +1,19 @@
+#!/bin/sh
+
+install_all() {
+    $HOME/.dotfiles/install.sh
+}
+
+if [ "$1" == "-i" ]; then
+    if [ -z "$2" ]; then
+        echo "Missing argument. Usage: dotfiles -i all"
+    else
+        if [ "$2" == "all" ]; then
+            install_all
+        else
+            echo "Invalid option. Usage: dotfiles -i all"
+        fi
+    fi
+else
+    echo "Usage: dotfiles -i all"
+fi
