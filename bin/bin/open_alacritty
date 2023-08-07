@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# /Users/kristijanzic/bin/open_alacritty.command
+
+# /Applications/Alacritty.app/Contents/MacOS/alacritty && killall Terminal
+
+# /usr/bin/open -a /Applications/Alacritty.app/Contents/MacOS/alacritty . && /usr/bin/killall Terminal
+
+/usr/bin/open -a /Applications/Alacritty.app/Contents/MacOS/alacritty && /usr/bin/killall Terminal
