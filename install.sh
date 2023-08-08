@@ -1,6 +1,7 @@
 source $HOME/.dotfiles/scripts/os_variables.sh
 source $HOME/.dotfiles/scripts/ansi_styles.sh
 source $HOME/.dotfiles/scripts/hero.sh
+source $HOME/.dotfiles/scripts/query_action.sh
 source $HOME/.dotfiles/scripts/shell/setup_shell.sh
 source $HOME/.dotfiles/scripts/package_manager/setup_package_manager.sh
 
