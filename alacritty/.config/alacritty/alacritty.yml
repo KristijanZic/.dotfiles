@@ -1,6 +1,6 @@
 # Alacritty configuration file
 shell:
-  program: /opt/homebrew/bin/fish
+  # program: /opt/homebrew/bin/fish
 
 window:
   # Set the background opacity to 0.5, which is 50% transparent.
