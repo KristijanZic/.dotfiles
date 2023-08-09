@@ -22,7 +22,37 @@ $$\\$$$$$$$ |\$$$$$$  | \$$$$  |$$ |      $$ |$$ |\$$$$$$$\ $$$$$$$  |
 
 A feature-rich installer and dotfiles management script!
 
-### Git Install
+Dotfiles uses stow to help you manage your various configuration files.
+The process is straightforward: simply move your file together with the entire directory structure from `~/` to your config file into the `~/.dotfiles/<config_dir_name>/` config directory like so:
+
+```sh
+mv ~/.config/nvim/init.lua ~/.dotfiles/nvim/.config/init.lua
+```
+
+Then add your `<config_dir_name>` to `restorw_all()` in the `install.sh` like so:
+
+```sh
+restorw_all() {
+    echo "Restowing all config files:"
+    # ...other restows 
+    restow <config_dir_name>
+    echo "....${Green}DONE${Style_Off}"
+}
+```
+
+Restow your config to make the links from the the original config paths to the ones we just moved to our `<config_dir_name>` by executing:
+
+```sh
+dot -r <config_dir_name>
+```
+
+or to restow all run `dot -r all` or just:
+
+```sh
+dot
+```
+
+## Git Install
 
 If you have `git` installed:
 
@@ -56,35 +86,3 @@ dot -r <config_directory_name>
 ```
 
 *supported configs: bin, nvim, alacritty, zsh
-
-### Usage
-
-Dotfiles uses stow to help you manage your various configuration files.
-The process is straightforward: simply move your file together with the entire directory structure from `~/` to your config file into the `~/.dotfiles/<config_dir_name>/` config directory like so:
-
-```sh
-mv ~/.config/nvim/init.lua ~/.dotfiles/nvim/.config/init.lua
-```
-
-Then add your `<config_dir_name>` to `restorw_all()` in the `install.sh` like so:
-
-```sh
-restorw_all() {
-    echo "Restowing all config files:"
-    # ...other restows 
-    restow <config_dir_name>
-    echo "....${Green}DONE${Style_Off}"
-}
-```
-
-Restow your config to make the links from the the original config paths to the ones we just moved to our `<config_dir_name>` by executing:
-
-```sh
-dot -r <config_dir_name>
-```
-
-or to restow all run `dot -r all` or just:
-
-```sh
-dot
-```
