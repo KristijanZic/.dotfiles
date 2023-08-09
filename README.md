@@ -26,7 +26,7 @@ Dotfiles uses stow to help you manage your various configuration files.
 The process is straightforward: simply move your file together with the entire directory structure from `~/` to your config file into the `~/.dotfiles/<config_dir_name>/` config directory like so:
 
 ```sh
-mv ~/.config/nvim/init.lua ~/.dotfiles/nvim/.config/init.lua
+mv ~/.config/nvim/init.lua ~/.dotfiles/nvim/.config/nvim/init.lua
 ```
 
 Then add your `<config_dir_name>` to `restorw_all()` in the `install.sh` like so:
