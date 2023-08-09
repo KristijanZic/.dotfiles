@@ -18,6 +18,13 @@ $$\\$$$$$$$ |\$$$$$$  | \$$$$  |$$ |      $$ |$$ |\$$$$$$$\ $$$$$$$  |
                                                        By KristijanZic
 ```
 
+## Index
+
+- [Index](#index)
+- [About Dotfiles](#about)
+- [Git Install](#install)
+- [Usage](#usage)
+
 # .dotfiles
 
 <a id="about"></a>
@@ -53,13 +60,6 @@ or to restow all run `dot -r all` or just:
 ```sh
 dot
 ```
-
-## Index
-
-- [About Dotfiles](#about)
-- [Index](#index)
-- [Git Install](#install)
-- [Usage](#usage)
 
 ## Git Install
 
