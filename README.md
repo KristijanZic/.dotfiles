@@ -2,6 +2,8 @@
 
 The project is still not stabilised so expect breaking changes in the shell scripts. That said, you can already use it for the config files, personalize current ones, implement new ones etc.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ```text
                                                                       
          $$\            $$\      $$$$$$\  $$\ $$\                     
