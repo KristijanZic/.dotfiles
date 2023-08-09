@@ -30,3 +30,61 @@ If you have `git` installed:
     - `cd ~/` from anywhere then `git clone https://github.com/KristijanZic/.dotfiles.git .dotfiles`
 1. `cd ~/.dotfiles`
 1. activate `dotfiles` and `dot` by running cd `.dotfiles; ./install.sh`
+
+## Usage
+
+You can run dotfiles by executing `dotfiles` or `dot`:
+
+```sh
+dot
+```
+
+To install a package `dotfiles` or `dot`:
+
+```sh
+dot -i <package_name>
+```
+
+*supported packages: brew, fish
+
+</br>
+
+To restow a config `dotfiles` or `dot`:
+
+```sh
+dot -r <config_directory_name>
+```
+
+*supported configs: bin, nvim, alacritty, zsh
+
+### Usage
+
+Dotfiles uses stow to help you manage your various configuration files.
+The process is straightforward: simply move your file together with the entire directory structure from `~/` to your config file into the `~/.dotfiles/<config_dir_name>/` config directory like so:
+
+```sh
+mv ~/.config/nvim/init.lua ~/.dotfiles/nvim/.config/init.lua
+```
+
+Then add your `<config_dir_name>` to `restorw_all()` in the `install.sh` like so:
+
+```sh
+restorw_all() {
+    echo "Restowing all config files:"
+    # ...other restows 
+    restow <config_dir_name>
+    echo "....${Green}DONE${Style_Off}"
+}
+```
+
+Restow your config to make the links from the the original config paths to the ones we just moved to our `<config_dir_name>` by executing:
+
+```sh
+dot -r <config_dir_name>
+```
+
+or to restow all run `dot -r all` or just:
+
+```sh
+dot
+```
