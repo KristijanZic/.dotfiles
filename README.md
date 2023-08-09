@@ -20,6 +20,8 @@ $$\\$$$$$$$ |\$$$$$$  | \$$$$  |$$ |      $$ |$$ |\$$$$$$$\ $$$$$$$  |
 
 # .dotfiles
 
+<a id="about"></a>
+
 A feature-rich installer and dotfiles management script!
 
 Dotfiles uses stow to help you manage your various configuration files.
@@ -52,7 +54,16 @@ or to restow all run `dot -r all` or just:
 dot
 ```
 
+## Index
+
+- [About Dotfiles](#about)
+- [Index](#index)
+- [Git Install](#install)
+- [Usage](#usage)
+
 ## Git Install
+
+<a id="install"></a>
 
 If you have `git` installed:
 
