@@ -17,7 +17,18 @@ setup_package_manager() {
             echo "    ${Yellow}!${Style_Off} ${Bold}Please install Homebrew${Style_Off}"
             # echo "      Follow the installation instructions at https://brew.sh/"
 
-            queryAction "Do you want to install Homebrew? (Y/n)" "Invalid input! Please enter 'yes' or 'no'." "${Yellow}!${Style_Off} ${Bold}Timeout reached.${Style_Off}\nContinuing the script..." "" install_package_manager_macos
+            if_no_echo_message() (
+                echo "    ${Yellow}!${Style_Off} ${Bold}That's okay, you can install Homebrew any time manually${Style_Off}"
+                echo "      Follow the installation instructions at https://brew.sh/"
+            )
+
+            queryAction \
+                -q "Do you want to install Homebrew? (Y/n)" \
+                -i "Invalid input! Please enter 'yes' or 'no'." \
+                -t "${Yellow}!${Style_Off} ${Bold}Timeout reached.${Style_Off}\nContinuing the script..." \
+                -y install_package_manager_macos \
+                -n if_no_echo_message
+
         fi
 
     fi

@@ -1,17 +1,40 @@
 queryAction() {
-    local queryMessage="${1:-"No query message! Input NO (y/N): "}"
-    local invalidResponse="${2:-"Invalid response."}"
-    local timeoutResponse="${3:-"Timed out."}"
-    # local countdown="${4:-8}"
-    local countdown="${4}"
-    local yesFunction=${5:-echo "Accepted."}
-    local noFunction=${6:-echo "Rejected."}
+    # OPTIND is initialized to 1 each time the shell or a shell script is invoked.
+    # The shell does not reset OPTIND automatically;
+    # it must be manually reset between multiple calls to getopts within the same
+    # shell invocation if a new set of parameters is to be used.
+    #
+    # with either local OPTIND or OPTIND=1 otherwise the provided args won't be red
+    # and the variables will fallback to default values.
+    local OPTIND
+    local arg
+    local countdown
+    local queryMessage="No query message! Input NO (y/N): "
+    local invalidResponse="Invalid response."
+    local timeoutResponse="Timed out."
+    # Random high positional argument that fails and falls back to default every time
+    # in order to be able to pass a function as a default value in the absence of the
+    # named parameter in which case it gets overriden by getops handling part.
+    local yesFunction=${100:-echo "Accepted."}
+    local noFunction=${101:-echo "Rejected default."}
+
+    while getopts 'c:q:i:t:y:n:' arg; do
+        case ${arg} in
+        c) countdown="${OPTARG}" ;;
+        q) queryMessage="${OPTARG:-"No query message! Input NO (y/N): "}" ;;
+        i) invalidResponse="${OPTARG:-"Invalid response."}" ;;
+        t) timeoutResponse="${OPTARG:-"Timed out."}" ;;
+        y) yesFunction=${OPTARG:-echo "Accepted."} ;;
+        n) noFunction=${OPTARG:-echo "Rejected."} ;;
+        *) return 1 ;; # illegal option
+        esac
+    done
 
     while true; do
 
         if [ -z "$countdown" ]; then
             local yn
-            read -p "$queryMessage: " yn
+            read -p "$queryMessage " yn
         fi
 
         if ! [ -z "$countdown" ]; then
