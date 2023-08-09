@@ -1,4 +1,4 @@
-# Work in progress
+# :construction: Work in progress :construction:
 
 The project is still not stabilised so expect breaking changes in the shell scripts. That said, you can already use it for the config files, personalize current ones, implement new ones etc.
 
