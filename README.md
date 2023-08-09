@@ -21,3 +21,12 @@ $$\\$$$$$$$ |\$$$$$$  | \$$$$  |$$ |      $$ |$$ |\$$$$$$$\ $$$$$$$  |
 # .dotfiles
 
 A feature-rich installer and dotfiles management script!
+
+### Git Install
+
+If you have `git` installed:
+
+1. clone this repo in the root of your user profile
+    - `cd ~/` from anywhere then `git clone https://github.com/KristijanZic/.dotfiles.git .dotfiles`
+1. `cd ~/.dotfiles`
+1. activate `dotfiles` and `dot` by running cd `.dotfiles; ./install.sh`
