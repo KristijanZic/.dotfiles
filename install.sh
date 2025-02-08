@@ -22,6 +22,7 @@ restorw_all() {
     restow bin
     restow zsh
     restow alacritty
+    restow skhd
     echo "....${Green}DONE${Style_Off}"
 }
 

@@ -1,4 +1,10 @@
 vim.g.mapleader = " "
+
+-- vim.keymap.set("n", "y", "j")
+-- vim.keymap.set("n", "n", "k")
+-- vim.keymap.set("n", "e", "l")
+-- vim.keymap.set("n", "o", ";")
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

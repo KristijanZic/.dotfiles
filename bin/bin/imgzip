@@ -1,0 +1,15 @@
+#!/bin/sh
+
+ffmpeg -i ${1}.png -filter:v scale=-2:1500 ./processed/${1}.jpg
+
+# mkdir images/processed
+# for f in images/*.jpg images/*.png images/*.jpeg
+# do
+#        ffmpeg -i $f -q:v 10 processed/$f -y
+# done
+
+# For Windows
+# mkdir processed
+# for %%F in (*.jpg) do (
+#     ffmpeg -i "%%F" -q:v 10 "processed\%%F"
+# )
